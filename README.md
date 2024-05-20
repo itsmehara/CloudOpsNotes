@@ -61,5 +61,5 @@ Thank you for contributing to CloudOpsNotes!
 # Contact
 
 For any questions or suggestions, please reach out to:
-- **Your Name** - [your.email@example.com](mailto:your.email@example.com)
-- GitHub: [yourusername](https://github.com/yourusername)
+- **itsmehara** - [hara2help@gmail.com](mailto:hara2help@gmail.com)
+- GitHub: [itsmehara](https://github.com/itsmehara)
