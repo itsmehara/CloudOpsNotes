@@ -23,7 +23,6 @@ CloudOpsNotes is a repository dedicated to providing valuable information and pr
 
 ### CONTRIBUTING.md
 
-```markdown
 # Contributing to CloudOpsNotes
 
 We appreciate your interest in contributing to CloudOpsNotes! Here are some guidelines to help you get started.
@@ -31,6 +30,7 @@ We appreciate your interest in contributing to CloudOpsNotes! Here are some guid
 ## How to Contribute
 1. **Fork the Repository**: Click on the 'Fork' button at the top right of the repository page.
 2. **Clone Your Fork**: Clone your forked repository to your local machine.
+
     ```sh
     git clone https://github.com/yourusername/CloudOpsNotes.git
     ```
