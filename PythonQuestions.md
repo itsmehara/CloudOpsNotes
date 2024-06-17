@@ -582,9 +582,14 @@ These tables provide a detailed overview and examples of each concept, helping y
 | 49 | How do you filter a list using list comprehension? | `[x for x in my_list if x > 5]` |
 | 50 | How do you merge two dictionaries? | `{**dict1, **dict2}` |
 
+```
 ...
+...
+...
+```
 
-Comprehension questions that can be answered easily:
+#### Comprehension questions that can be answered easily:
+
 
 ### Comprehensions Questions
 
@@ -640,6 +645,8 @@ These questions cover various aspects of comprehensions in Python
 | 4  | What other Python libraries can you integrate with PySpark? | You can integrate libraries such as SciPy, Scikit-learn, TensorFlow, and others for various data analysis and machine learning tasks. |
 | 5  | How do you install additional Python libraries on a PySpark cluster? | You can install additional libraries using the `pip install` command via shell scripts or using the `--py-files` option with `spark-submit`. |
 
+```python
+```
 ### Real-World Applications
 
 | No | Question | Answer |
