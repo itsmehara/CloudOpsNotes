@@ -286,7 +286,7 @@ Comprehensive table with questions and answers covering various aspects of Pytho
 | 19 | How do you define a property in Python? | Use the `@property` decorator to define getter, setter, and deleter methods for an attribute. |
 | 20 | Explain the difference between composition and inheritance. | Composition involves building complex objects by combining simpler ones, while inheritance creates a new class based on an existing class. |
 
-These questions and answers to verify knowledge of a Python developer with experience in Data Science, Machine Learning, and various Python concepts.
+These questions and answers of Python in Data Science, Machine Learning, and various Python concepts.
 
 Below is the table with the questions and their answers:
 
