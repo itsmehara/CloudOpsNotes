@@ -183,9 +183,7 @@ Here is a comprehensive table with questions and answers covering various aspect
 | 11 | What is the purpose of the `__name__ == '__main__'` construct? | It allows code to run only when the module is executed directly, not when imported. |
 | 12 | How does Python's garbage collection work? | Python uses reference counting and a cyclic garbage collector to manage memory. |
 | 13 | What are Python's built-in data types? | Common built-in data types include `int`, `float`, `str`, `list`, `tuple`, `dict`, `set`, and `bool`. |
-| 14 | Explain the difference between shallow and deep copy. | A shallow copy copies the object
-
- but not the nested objects, while a deep copy copies both the object and nested objects. |
+| 14 | Explain the difference between shallow and deep copy. | A shallow copy copies the object but not the nested objects, while a deep copy copies both the object and nested objects. |
 | 15 | How do you read and write files in Python? | Use `open()` with appropriate modes (`'r'`, `'w'`, `'a'`, etc.) for reading and writing files. |
 | 16 | What is the Global Interpreter Lock (GIL) in Python? | The GIL is a mutex that protects access to Python objects, preventing multiple threads from executing Python bytecode simultaneously. |
 | 17 | What is a Python module? | A module is a file containing Python code that can be imported and used in other Python scripts. |
@@ -308,10 +306,124 @@ Here is the table with the questions and their answers:
 | 57 | What is ORM? Why is it useful? How does Django accomplish such functionality? What is model inheritance? What types of model inheritance are there in Django? | ORM (Object-Relational Mapping) converts data between incompatible systems. Django's ORM handles database operations. Model inheritance types are abstract base classes, multi-table inheritance, and proxy models. |
 | 58 | In table inheritance, how are the two tables related? | They are related through foreign key relationships, with one table extending the other. |
 | 59 | How do you extend a user profile in Django? | By creating a OneToOneField linking to the User model. |
-| 60 | Describe signals in Django?
-
- What is their usefulness? What design pattern do they remind you of? How would you implement the above-mentioned design pattern? | Signals allow decoupled communication between components, similar to the Observer pattern. Implement by defining signal handlers and connecting them to signals. |
+| 60 | Describe signals in Django? What is their usefulness? What design pattern do they remind you of? How would you implement the above-mentioned design pattern? | Signals allow decoupled communication between components, similar to the Observer pattern. Implement by defining signal handlers and connecting them to signals. |
 
 Let me know if you need further details on any of the questions.
 
 
+
+
+Sure! Here are the answers to the questions in table format:
+
+### Slots
+
+| No | Question | Answer |
+|----|----------|--------|
+| 1 | What are `__slots__` in Python? | `__slots__` is a mechanism that prevents the creation of a default `__dict__` for instance attributes, saving memory by allocating space for a fixed set of attributes. |
+| 2 | Write sample code using `__slots__`. | refer below code |
+```python
+class MyClass:
+    __slots__ = ['attr1', 'attr2']
+    
+    def __init__(self, attr1, attr2):
+        self.attr1 = attr1
+        self.attr2 = attr2
+
+obj = MyClass(10, 20)
+print(obj.attr1, obj.attr2)
+``` 
+
+
+### Global Interpreter Lock (GIL)
+
+| No | Question | Answer |
+|----|----------|--------|
+| 3 | What is the GIL in Python? | The Global Interpreter Lock (GIL) is a mutex that protects access to Python objects, preventing multiple threads from executing Python bytecodes simultaneously. This ensures that only one thread executes in the Python interpreter at once, making Python thread-safe but limiting the execution of multi-threaded programs. |
+
+
+### Method Resolution Order (MRO)
+
+| No | Question | Answer |
+|----|----------|--------|
+| 4 | What is the MRO in Python? | Method Resolution Order (MRO) is the order in which Python looks for a method in a hierarchy of classes. It is determined using the C3 linearization algorithm, ensuring a consistent order in class hierarchies, especially with multiple inheritance. |
+| 5 | Explain MRO in detail. | The MRO ensures that each class is considered before its superclass. It is computed by the C3 linearization algorithm, which merges the MROs of the parents while preserving their order and ensuring that a class appears before any of its subclasses. This is crucial for consistent method resolution and avoiding potential conflicts in multiple inheritance. |
+| 6 | How can you view the MRO of a class? | Use the `ClassName.__mro__` attribute or the `ClassName.mro()` method. |
+| 7 | Example of viewing MRO. | refer below code |
+
+```python
+class A: pass
+class B(A): pass
+class C(A): pass
+class D(B, C): pass
+
+print(D.__mro__)
+
+# Output: (<class '__main__.D'>, <class '__main__.B'>, <class '__main__.C'>, <class '__main__.A'>, <class 'object'>)
+``` 
+
+### Metaclass
+
+| No | Question | Answer |
+|----|----------|--------|
+| 8 | What is a metaclass in Python? | A metaclass is a class of a class that defines how a class behaves. A class is an instance of a metaclass. In Python, `type` is the default metaclass, but custom metaclasses can be created by inheriting from `type`. |
+| 9 | Explain metaclass in detail. | Metaclasses are powerful tools that allow customization of class creation and behavior. When a class is defined, Python uses its metaclass to create it. The metaclass can modify the class definition, add or modify methods, and control class inheritance. This allows for advanced patterns like singleton classes, auto-registering classes, and more. |
+| 10 | Write sample code using a metaclass. | refer below code |
+
+```python
+class MyMeta(type):
+    def __new__(cls, name, bases, dct):
+        dct['greet'] = lambda self: f"Hello from {self.__class__.__name__}"
+        return super().__new__(cls, name, bases, dct
+class MyClass(metaclass=MyMeta):
+    pass
+obj = MyClass()
+print(obj.greet())  # Output: Hello from MyClass
+``` 
+
+### Context Manager
+
+| No | Question | Answer |
+|----|----------|--------|
+| 11 | Explain context manager in Python. | A context manager in Python is a construct that allows setup and teardown actions to be performed around a block of code. It is commonly used with `with` statements to ensure resources are properly managed, such as opening and closing files. |
+| 12 | How to write a context manager? | You can write a context manager using a class with `__enter__` and `__exit__` methods, or using the `contextlib` module's `contextmanager` decorator. |
+| 13 | Write sample code for a context manager using a class. | refer below code |
+
+```python
+class MyContextManager:
+    def __enter__(self):
+        print("Entering the context")
+        return self
+
+    def __exit__(self, exc_type, exc_value, traceback):
+        print("Exiting the context")
+
+with MyContextManager():
+    print("Inside the context")
+# Output:
+# Entering the context
+# Inside the context
+# Exiting the context
+```
+
+| No | Question | Answer |
+|----|----------|--------|
+| 14 | Write sample code for a context manager using `contextlib`. | refer below code | 
+
+```python
+from contextlib import contextmanager
+
+@contextmanager
+def my_context():
+    print("Entering the context")
+    yield
+    print("Exiting the context")
+
+with my_context():
+    print("Inside the context")
+# Output:
+# Entering the context
+# Inside the context
+# Exiting the context
+``` 
+
+These tables provide a detailed overview and examples of each concept, helping you to test the depth of knowledge of the candidates in these advanced Python topics.
