@@ -457,10 +457,19 @@ class MyContextManager:
 
 with MyContextManager():
     print("Inside the context")
+```
+
+```
 # Output:
 # Entering the context
 # Inside the context
 # Exiting the context
+
+
+
+
+
+.
 ```
 
 | No | Question | Answer |
@@ -478,11 +487,14 @@ def my_context():
 
 with my_context():
     print("Inside the context")
+```
 
+```
 # Output:
 # Entering the context
 # Inside the context
 # Exiting the context
+
 
 
 
