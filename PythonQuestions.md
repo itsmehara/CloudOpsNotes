@@ -43,7 +43,7 @@ notes
 
 <br>
 
-Below are 10 questions for each section focusing on Pandas, NumPy, list/collection slicing, data transformations, queries on Pandas, joins in Pandas, and matplotlib/other similar libraries.
+Below questions for each section focusing on Pandas, NumPy, list/collection slicing, data transformations, queries on Pandas, joins in Pandas, and matplotlib/other similar libraries.
 
 ### Pandas Knowledge
 
@@ -156,10 +156,10 @@ Below are 10 questions for each section focusing on Pandas, NumPy, list/collecti
 | 10 | How do you create a heatmap in Seaborn? | Use `sns.heatmap(data, annot=True)` followed by `plt.show()`. |
 
 
-Feel free to use these questions to assess the depth of knowledge of candidates in these specific areas.
+.
 
 
-Here is a comprehensive table with questions and answers covering various aspects of Python knowledge, Data Science, and Machine Learning, categorized by the different areas of expertise.
+Comprehensive table with questions and answers covering various aspects of Python knowledge, Data Science, and Machine Learning, categorized by the different areas of expertise.
 
 ### Data Science Knowledge
 
@@ -286,9 +286,9 @@ Here is a comprehensive table with questions and answers covering various aspect
 | 19 | How do you define a property in Python? | Use the `@property` decorator to define getter, setter, and deleter methods for an attribute. |
 | 20 | Explain the difference between composition and inheritance. | Composition involves building complex objects by combining simpler ones, while inheritance creates a new class based on an existing class. |
 
-Feel free to use these questions and answers to assess the depth of knowledge of a Python developer with experience in Data Science, Machine Learning, and various Python concepts.
+These questions and answers to verify knowledge of a Python developer with experience in Data Science, Machine Learning, and various Python concepts.
 
-Here is the table with the questions and their answers:
+Below is the table with the questions and their answers:
 
 | No | Question | Answer |
 |----|----------|--------|
@@ -353,12 +353,12 @@ Here is the table with the questions and their answers:
 | 59 | How do you extend a user profile in Django? | By creating a OneToOneField linking to the User model. |
 | 60 | Describe signals in Django? What is their usefulness? What design pattern do they remind you of? How would you implement the above-mentioned design pattern? | Signals allow decoupled communication between components, similar to the Observer pattern. Implement by defining signal handlers and connecting them to signals. |
 
-Let me know if you need further details on any of the questions.
+.
 
 
 
 
-Sure! Here are the answers to the questions in table format:
+Below are the answers to the questions:
 
 ### Slots
 
@@ -484,4 +484,4 @@ with my_context():
 # Exiting the context
 ``` 
 
-These tables provide a detailed overview and examples of each concept, helping you to test the depth of knowledge of the candidates in these advanced Python topics.
+These tables provide a detailed overview and examples of each concept, helping you in these advanced Python topics.
