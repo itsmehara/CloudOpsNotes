@@ -386,6 +386,19 @@ print(obj.attr1, obj.attr2)
 | 3 | What is the GIL in Python? | The Global Interpreter Lock (GIL) is a mutex that protects access to Python objects, preventing multiple threads from executing Python bytecodes simultaneously. This ensures that only one thread executes in the Python interpreter at once, making Python thread-safe but limiting the execution of multi-threaded programs. |
 
 
+
+```python
+print("")
+
+
+
+
+
+
+print("")
+```
+
+
 ### Method Resolution Order (MRO)
 
 | No | Question | Answer |
