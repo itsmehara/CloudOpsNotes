@@ -478,10 +478,16 @@ def my_context():
 
 with my_context():
     print("Inside the context")
+
 # Output:
 # Entering the context
 # Inside the context
 # Exiting the context
+
+
+
+
+
 ``` 
 
 These tables provide a detailed overview and examples of each concept, helping you in these advanced Python topics.
