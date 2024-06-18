@@ -1,3 +1,46 @@
+```note
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+```
 Below are different sections focused on Jenkins expertise, specifically on Groovy scripting, understanding and debugging pipeline stages, 
 and deep knowledge of debugging Jenkins pipelines. 
 Each section includes 20 questions with answers.
