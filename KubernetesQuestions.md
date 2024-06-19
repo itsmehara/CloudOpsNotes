@@ -30,8 +30,14 @@
 
 
 
-```
 
+
+
+
+
+
+
+```
 
 Here is a comprehensive list of questions for a Kubernetes expert interview, 
 focusing on hands-on skills, understanding, debugging clusters and pods, 
