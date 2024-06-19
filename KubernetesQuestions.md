@@ -223,6 +223,12 @@ and deep knowledge of debugging Kubernetes pods. The questions are organized int
 | 29 | How do you implement GitOps in Kubernetes? | By using tools like Argo CD or Flux to continuously deploy and manage Kubernetes manifests from a Git repository, ensuring that the cluster state matches the Git repository state. |
 | 30 | What are the differences between Helm and Kustomize? | Helm is a package manager for Kubernetes that uses charts to deploy applications, while Kustomize is a configuration management tool that allows you to customize Kubernetes YAML files without using templating. |
 
+```
+
+
+
+```
+
 Few other sections that can be important when assessing a Kubernetes expert, 
 especially in the context of DevOps and ensuring robust and efficient Kubernetes operations. 
 Sections with sample questions and answers:
