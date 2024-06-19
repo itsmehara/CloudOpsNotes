@@ -105,9 +105,7 @@ and deep knowledge of debugging Kubernetes pods. The questions are organized int
 | 21 | How do you enable and access the Kubernetes dashboard? | By deploying the dashboard and accessing it via `kubectl proxy` and navigating to the dashboard URL. |
 | 22 | How do you label a node in Kubernetes? | By using the `kubectl label node <node-name> <label-key>=<label-value>` command. |
 | 23 | How do you taint a node in Kubernetes? | By using the `kubectl taint nodes <node-name> <key>=<value>:<effect>` command. |
-| 24 | How do you schedule a Pod to a specific node? | By using node selectors, node affinity, or nodeName in the Pod spec.
-
- |
+| 24 | How do you schedule a Pod to a specific node? | By using node selectors, node affinity, or nodeName in the Pod spec. |
 | 25 | How do you delete all resources in a Namespace? | By using the `kubectl delete namespace <namespace-name>` command. |
 | 26 | How do you roll out a canary deployment in Kubernetes? | By updating the Deployment with a new version and gradually increasing the replica count of the new version while decreasing the old version. |
 | 27 | How do you debug a failing Pod? | By checking the Pod's logs, events, and using the `kubectl describe pod <pod-name>` and `kubectl exec -it <pod-name> -- /bin/sh` commands. |
@@ -171,9 +169,7 @@ and deep knowledge of debugging Kubernetes pods. The questions are organized int
 | 15 | How do you debug a Pod with high latency issues? | Check the Pod logs, inspect network policies, and use network diagnostic tools to identify bottlenecks. |
 | 16 | How do you debug a Pod with environment variable issues? | Check the Pod spec for environment variable definitions and ensure they are correctly set. |
 | 17 | How do you debug a Pod with missing ConfigMap/Secret mounts? | Check the Pod spec for volume mounts and ensure the ConfigMap/Secret is available and correctly referenced. |
-| 18 | How do you debug a Pod with PVC binding issues? | Check the PVC and
-
- PV status, ensure the storage class and provisioner are working, and review storage backend logs. |
+| 18 | How do you debug a Pod with PVC binding issues? | Check the PVC and PV status, ensure the storage class and provisioner are working, and review storage backend logs. |
 | 19 | How do you debug a Pod with node affinity issues? | Check the Pod spec for node affinity rules and ensure there are matching nodes available. |
 | 20 | How do you debug a Pod with inter-Pod communication issues? | Use network diagnostic tools to test connectivity between Pods, check network policies, and review CNI plugin logs. |
 | 21 | How do you debug a Pod with service discovery issues? | Check service and endpoint objects, review CoreDNS logs, and ensure the network is correctly configured. |
