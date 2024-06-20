@@ -770,7 +770,7 @@ data "aws_elb" "example" {
 
 | No | Question | Answer |
 |----|----------|--------|
-| 18 | How do you use a data source to get information about an AWS CloudWatch log group? | 
+| 18 | How do you use a data source to get information about an AWS CloudWatch log group? | .|
 ```hcl
 data "aws_cloudwatch_log_group" "example" {
   name = "my-log-group"
@@ -788,7 +788,7 @@ data "aws_kms_key" "example" {
 
 | No | Question | Answer |
 |----|----------|--------|
-| 20 | How do you use a data source to get information about an AWS NAT gateway? | 
+| 20 | How do you use a data source to get information about an AWS NAT gateway? | .|
 ```hcl
 data "aws_nat_gateway" "example" {
   id = "nat-12345678"
@@ -813,25 +813,31 @@ data "aws_redshift_cluster" "example" {
 data "aws_route_table" "example" {
   id = "rtb-12345678"
 }
-``` |
-| 23 | How do you use a data source to get information about an AWS SQS queue? | 
+```
+| No | Question | Answer |
+|----|----------|--------|
+| 23 | How do you use a data source to get information about an AWS SQS queue? | .|
 ```hcl
 data "aws_sqs_queue" "example" {
   name = "my-queue"
 }
-``` |
-| 24 | How do you use a data source to get information about an AWS VPC peering connection? | 
+```
+| No | Question | Answer |
+|----|----------|--------|
+| 24 | How do you use a data source to get information about an AWS VPC peering connection? | .|
 ```hcl
 data "aws_vpc_peering_connection" "example" {
   id = "pcx-12345678"
 }
-``` |
-| 25 | How do you use a data source to get information about an AWS VPN gateway? | 
+```
+| No | Question | Answer |
+|----|----------|--------|
+| 25 | How do you use a data source to get information about an AWS VPN gateway? | .|
 ```hcl
 data "aws_vpn_gateway" "example" {
   id = "vgw-12345678"
 }
-``` |
+``` 
 
 ### Section 9: Provisioners
 
