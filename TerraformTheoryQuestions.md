@@ -544,9 +544,7 @@ let's continue from where we left off and ensure that each section has 30 questi
 
 | No | Question | Answer |
 |----|----------|--------|
-| 1  | How do you manage secrets in Terraform configurations? | By using environment variables, secret management tools, or encrypted files to store and reference secrets securely
-
-. |
+| 1  | How do you manage secrets in Terraform configurations? | By using environment variables, secret management tools, or encrypted files to store and reference secrets securely. |
 | 2  | What is the best practice for handling sensitive data in Terraform? | Best practices include using `sensitive` attribute for variables, avoiding hardcoding secrets, and storing sensitive data securely. |
 | 3  | How do you ensure secure remote state storage in Terraform? | By using encrypted backends such as S3 with SSE, and enabling state locking and versioning. |
 | 4  | How do you control access to Terraform state files? | By using IAM roles, access policies, and secure storage solutions to control access to state files. |
