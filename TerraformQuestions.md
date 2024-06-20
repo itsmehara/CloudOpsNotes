@@ -38,7 +38,7 @@
 
 
 ```
-Certainly! Here are some coding style questions and answers for hiring a Terraform expert with a focus on hands-on expertise, debugging clusters, and pods. The questions will be organized into different sections under the DevOps area, and they will include 15 questions and answers for each section in table format.
+Here are some coding style questions and answers to learn and become a Terraform expert with a focus on hands-on expertise, debugging clusters, and pods. The questions will be organized into different sections under the DevOps area, and they will include 15 questions and answers for each section.
 
 ### Section 1: Introduction to Terraform
 
