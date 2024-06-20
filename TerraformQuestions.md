@@ -85,6 +85,7 @@ resource "aws_instance" "example" {
 }
 ```
 
+|----|----------|--------|
 | 7  | How do you define output values in Terraform? | refer below code |
 ```hcl
 output "instance_id" {
