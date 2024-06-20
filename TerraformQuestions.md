@@ -844,7 +844,7 @@ data "aws_vpn_gateway" "example" {
 | No | Question | Answer |
 |----|----------|--------|
 | 1  | What is a provisioner in Terraform? | A provisioner is used to execute scripts or commands on a resource. |
-| 2  | How do you define a provisioner in a resource block? | 
+| 2  | How do you define a provisioner in a resource block? | .|
 ```hcl
 resource "aws_instance" "example" {
   ami           = "ami-0c55b159cbfafe1f0"
@@ -854,14 +854,18 @@ resource "aws_instance" "example" {
     command = "echo Hello, World!"
   }
 }
-``` |
-| 3  | How do you use a `local-exec` provisioner? | 
+```
+| No | Question | Answer |
+|----|----------|--------|
+| 3  | How do you use a `local-exec` provisioner? | .|
 ```hcl
 provisioner "local-exec" {
   command = "echo Hello, World!"
 }
-``` |
-| 4  | How do you use a `remote-exec` provisioner? | 
+```
+| No | Question | Answer |
+|----|----------|--------|
+| 4  | How do you use a `remote-exec` provisioner? | .|
 ```hcl
 provisioner "remote-exec" {
   inline = [
@@ -869,15 +873,19 @@ provisioner "remote-exec" {
     "sudo apt-get install -y nginx",
   ]
 }
-``` |
-| 5  | How do you use a file provisioner to upload a file? | 
+```
+| No | Question | Answer |
+|----|----------|--------|
+| 5  | How do you use a file provisioner to upload a file? | .|
 ```hcl
 provisioner "file" {
   source      = "path/to/local/file"
   destination = "/path/to/remote/file"
 }
-``` |
-| 6  | How do you specify connection details for a provisioner? | 
+```
+| No | Question | Answer |
+|----|----------|--------|
+| 6  | How do you specify connection details for a provisioner? | .|
 ```hcl
 connection {
   type        = "ssh"
@@ -885,24 +893,30 @@ connection {
   private_key = file("~/.ssh/id_rsa")
   host        = aws_instance.example.public_ip
 }
-``` |
-| 7  | How do you use a `null_resource` with a provisioner? | 
+```
+| No | Question | Answer |
+|----|----------|--------|
+| 7  | How do you use a `null_resource` with a provisioner? | .|
 ```hcl
 resource "null_resource" "example" {
   provisioner "local-exec" {
     command = "echo Hello, World!"
   }
 }
-``` |
+```
+| No | Question | Answer |
+|----|----------|--------|
 | 8  | How do you run a provisioner only on creation? | Use the `when` argument with the value `create`. |
 | 9  | How do you run a provisioner only on resource destruction? | Use the `when` argument with the value `destroy`. |
-| 10 | How do you use a provisioner to run a script? | 
+| 10 | How do you use a provisioner to run a script? | .|
 ```hcl
 provisioner "remote-exec" {
   script = "path/to/script.sh"
 }
-``` |
-| 11 | How do you use environment variables in a provisioner? | 
+```
+| No | Question | Answer |
+|----|----------|--------|
+| 11 | How do you use environment variables in a provisioner? | .|
 ```hcl
 provisioner "local-exec" {
   environment = {
@@ -910,7 +924,9 @@ provisioner "local-exec" {
   }
   command = "echo $ENV_VAR"
 }
-``` |
+```
+| No | Question | Answer |
+|----|----------|--------|
 | 12 | How do you handle provisioner errors? | Use the `on_failure` argument with the value `continue` or `fail`. |
 | 13 | How do you use a provisioner to install software? | Use a `remote-exec` provisioner with the necessary installation commands. |
 | 14 | How do you use a provisioner to configure a service? | Use a `remote-exec` provisioner with the necessary configuration commands. |
