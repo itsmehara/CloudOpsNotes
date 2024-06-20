@@ -95,7 +95,9 @@ output "instance_id" {
   value = aws_instance.example.id
 }
 ```
- 
+
+| No | Question | Answer |
+|----|----------|--------| 
 | 8  | How do you format Terraform configuration files? | `terraform fmt` |
 | 9  | How do you validate a Terraform configuration file? | `terraform validate` |
 | 10 | Write a data source block to fetch the latest Amazon Linux 2 AMI. | refer below code. |
@@ -113,14 +115,19 @@ data "aws_ami" "latest_amazon_linux" {
 }
 ``` 
 
-| 11 | How do you use a Terraform module in a configuration? | 
+| No | Question | Answer |
+|----|----------|--------|
+| 11 | How do you use a Terraform module in a configuration? | refer below code. |
 ```hcl
 module "network" {
   source = "./modules/network"
   cidr_block = "10.0.0.0/16"
 }
-``` |
-| 12 | How do you manage remote state in Terraform? | 
+```
+
+| No | Question | Answer |
+|----|----------|--------|
+| 12 | How do you manage remote state in Terraform? | refer below code. |
 ```hcl
 terraform {
   backend "s3" {
@@ -129,13 +136,19 @@ terraform {
     region = "us-west-2"
   }
 }
-``` |
-| 13 | How do you define provider configurations in Terraform? | 
+```
+
+| No | Question | Answer |
+|----|----------|--------|
+| 13 | How do you define provider configurations in Terraform? | refer below code. |
 ```hcl
 provider "aws" {
   region = "us-west-2"
 }
-``` |
+```
+
+| No | Question | Answer |
+|----|----------|--------|
 | 14 | How do you lock the Terraform state file? | Use a backend that supports state locking, such as S3 with DynamoDB for locking. |
 | 15 | How do you generate a visual representation of the Terraform configuration? | `terraform graph` |
 
@@ -143,42 +156,45 @@ provider "aws" {
 
 | No | Question | Answer |
 |----|----------|--------|
-| 1  | How do you install Terraform on a Linux system? | 
+| 1  | How do you install Terraform on a Linux system? | refer below code. |
+
 ```bash
 wget https://releases.hashicorp.com/terraform/1.0.0/terraform_1.0.0_linux_amd64.zip
 unzip terraform_1.0.0_linux_amd64.zip
 sudo mv terraform /usr/local/bin/
-``` |
+```
+
+| No | Question | Answer |
+|----|----------|--------|
 | 2  | How do you check the installed version of Terraform? | `terraform version` |
 | 3  | How do you upgrade Terraform to the latest version? | Download the latest version from the official site and replace the old binary. |
-| 4  | How do you set up autocomplete for Terraform in Bash? | 
-```bash
-terraform -install-autocomplete
-``` |
-| 5  | How do you configure Terraform to use a specific AWS profile? | 
+| 4  | How do you set up autocomplete for Terraform in Bash? | `terraform -install-autocomplete` |
+| 5  | How do you configure Terraform to use a specific AWS profile? | refer below code |
 ```hcl
 provider "aws" {
   region  = "us-west-2"
   profile = "myprofile"
 }
-``` |
-| 6  | How do you set environment variables for Terraform AWS credentials? | 
+```
+
+| No | Question | Answer |
+|----|----------|--------|
+| 6  | How do you set environment variables for Terraform AWS credentials? | refer below code |
+
 ```bash
 export AWS_ACCESS_KEY_ID="your_access_key"
 export AWS_SECRET_ACCESS_KEY="your_secret_key"
-``` |
-| 7  | How do you configure Terraform logging? | 
-```bash
-export TF_LOG=DEBUG
-``` |
-| 8  | How do you set the plugin cache directory in Terraform? | 
-```hcl
-plugin_cache_dir = "~/.terraform.d/plugin-cache"
-``` |
+```
+
+| No | Question | Answer |
+|----|----------|--------|
+| 7  | How do you configure Terraform logging? | `export TF_LOG=DEBUG` |
+| 8  | How do you set the plugin cache directory in Terraform? | `plugin_cache_dir = "~/.terraform.d/plugin-cache"` |
 | 9  | How do you initialize a new Terraform workspace? | `terraform workspace new myworkspace` |
 | 10 | How do you list all Terraform workspaces? | `terraform workspace list` |
 | 11 | How do you select a specific Terraform workspace? | `terraform workspace select myworkspace` |
-| 12 | How do you configure a custom backend for Terraform state? | 
+| 12 | How do you configure a custom backend for Terraform state? | refer below code |
+
 ```hcl
 terraform {
   backend "consul" {
@@ -186,7 +202,10 @@ terraform {
     path    = "terraform/state"
   }
 }
-``` |
+```
+
+| No | Question | Answer |
+|----|----------|--------|
 | 13 | How do you install a specific version of Terraform using tfenv? | `tfenv install 0.12.29` |
 | 14 | How do you uninstall a specific version of Terraform using tfenv? | `tfenv uninstall 0.12.29` |
 | 15 | How do you set a default Terraform version using tfenv? | `tfenv use 0.12.29` |
@@ -196,19 +215,26 @@ terraform {
 | No | Question | Answer |
 |----|----------|--------|
 | 1  | What is a Terraform provider? | A provider is a plugin that enables interaction with APIs of various cloud platforms and services. |
-| 2  | How do you define a provider in Terraform? | 
+| 2  | How do you define a provider in Terraform? | refer below code |
+
 ```hcl
 provider "aws" {
   region = "us-west-2"
 }
-``` |
-| 3  | How do you specify provider version constraints? | 
+```
+
+| No | Question | Answer |
+|----|----------|--------|
+| 3  | How do you specify provider version constraints? | refer below code |
 ```hcl
 provider "aws" {
   version = "~> 2.0"
 }
-``` |
-| 4  | How do you configure multiple provider instances? | 
+```
+
+| No | Question | Answer |
+|----|----------|--------|
+| 4  | How do you configure multiple provider instances? | refer below code |
 ```hcl
 provider "aws" {
   alias  = "us_east"
@@ -219,32 +245,41 @@ provider "aws" {
   alias  = "us_west"
   region = "us-west-2"
 }
-``` |
-| 5  | How do you reference a provider alias in a resource block? | 
+```
+
+| No | Question | Answer |
+|----|----------|--------|
+| 5  | How do you reference a provider alias in a resource block? | refer below code |
 ```hcl
 resource "aws_instance" "example" {
   provider = aws.us_east
   ami           = "ami-0c55b159cbfafe1f0"
   instance_type = "t2.micro"
 }
-``` |
-| 6  | How do you configure a provider to use an AWS profile? | 
+``` 
+
+| No | Question | Answer |
+|----|----------|--------|
+| 6  | How do you configure a provider to use an AWS profile? | refer below code |
 ```hcl
 provider "aws" {
   region  = "us-west-2"
   profile = "myprofile"
 }
-``` |
-| 7  | How do you specify a custom provider in Terraform? | 
+```
+
+| No | Question | Answer |
+|----|----------|--------|
+| 7  | How do you specify a custom provider in Terraform? | refer below code |
 ```hcl
 provider "custom" {
   alias = "example"
 }
-``` |
+``` 
 | 8  | How do you pass environment variables to a provider? | Use the `environment` block in the provider configuration. |
 | 9  | How do you use multiple providers in a single configuration? | By defining multiple provider blocks and referencing them with aliases in resource configurations. |
 | 10 | How do you override provider configurations for specific resources? | By specifying the `provider` argument in the resource block. |
-| 11 | How do you set default tags for AWS resources in a provider configuration? | 
+| 11 | How do you set default tags for AWS resources in a provider configuration? | refer below code |
 ```hcl
 provider "aws" {
   default_tags {
@@ -253,8 +288,11 @@ provider "aws" {
     }
   }
 }
-``` |
-| 12 | How do you configure a provider to use AssumeRole for AWS? | 
+```
+
+| No | Question | Answer |
+|----|----------|--------|
+| 12 | How do you configure a provider to use AssumeRole for AWS? | refer below code |
 ```hcl
 provider "aws" {
   region  = "us-west-2"
@@ -262,34 +300,40 @@ provider "aws" {
     role_arn = "arn:aws:iam::123456789012:role/myrole"
   }
 }
-``` |
+```
+
+| No | Question | Answer |
+|----|----------|--------|
 | 13 | How do you handle provider dependencies in modules? | By passing provider configurations to modules using the `providers` argument. |
-| 14 | How do you use the AzureRM provider in Terraform? | 
+| 14 | How do you use the AzureRM provider in Terraform? | refer below code |
 ```hcl
 provider "azurerm" {
   features {}
 }
-``` |
-| 15 | How do you configure the Google Cloud provider in Terraform? | 
+``` 
+| 15 | How do you configure the Google Cloud provider in Terraform? | refer below code |
 ```hcl
 provider "google" {
   project = "my-project-id"
   region  = "us-central1"
 }
-``` |
+``` 
 
 ### Section 4: Resources
 
 | No | Question | Answer |
 |----|----------|--------|
-| 1  | How do you define a resource in Terraform? | 
+| 1  | How do you define a resource in Terraform? | refer below code |
 ```hcl
 resource "aws_instance" "example" {
   ami           = "ami-0c55b159cbfafe1f0"
   instance_type = "t2.micro"
 }
-``` |
-| 2  | How do you reference a resource attribute in another resource? | 
+```
+
+| No | Question | Answer |
+|----|----------|--------|
+| 2  | How do you reference a resource attribute in another resource? | refer below code|
 ```hcl
 resource "aws_instance" "example" {
   ami           = "ami-0c55b159cbfafe1
@@ -301,10 +345,13 @@ f0"
 resource "aws_eip" "ip" {
   instance = aws_instance.example.id
 }
-``` |
+```
+
+| No | Question | Answer |
+|----|----------|--------|
 | 3  | How do you define resource dependencies in Terraform? | Use the `depends_on` argument in the resource block. |
 | 4  | How do you import an existing resource into Terraform state? | `terraform import aws_instance.example i-1234567890abcdef0` |
-| 5  | How do you use lifecycle rules in a resource block? | 
+| 5  | How do you use lifecycle rules in a resource block? | .|
 ```hcl
 resource "aws_instance" "example" {
   ami           = "ami-0c55b159cbfafe1f0"
@@ -314,16 +361,20 @@ resource "aws_instance" "example" {
     prevent_destroy = true
   }
 }
-``` |
-| 6  | How do you create multiple resources using a count parameter? | 
+```
+| No | Question | Answer |
+|----|----------|--------|
+| 6  | How do you create multiple resources using a count parameter? | .|
 ```hcl
 resource "aws_instance" "example" {
   count         = 3
   ami           = "ami-0c55b159cbfafe1f0"
   instance_type = "t2.micro"
 }
-``` |
-| 7  | How do you create multiple resources using a for_each parameter? | 
+```
+| No | Question | Answer |
+|----|----------|--------|
+| 7  | How do you create multiple resources using a for_each parameter? | .|
 ```hcl
 resource "aws_instance" "example" {
   for_each = toset(["instance1", "instance2", "instance3"])
@@ -333,9 +384,11 @@ resource "aws_instance" "example" {
     Name = each.key
   }
 }
-``` |
-| 8  | How do you define a resource with conditional logic? | Use the ternary operator in resource attributes. |
-| 9  | How do you create a resource with a dynamic block? | 
+```
+| No | Question | Answer |
+|----|----------|--------|
+| 8  | How do you define a resource with conditional logic? | Use the ternary operator in resource attributes. | .|
+| 9  | How do you create a resource with a dynamic block? | .|
 ```hcl
 resource "aws_security_group" "example" {
   name        = "example"
@@ -351,9 +404,11 @@ resource "aws_security_group" "example" {
     }
   }
 }
-``` |
+```
+| No | Question | Answer |
+|----|----------|--------|
 | 10 | How do you manage resource tainting in Terraform? | `terraform taint aws_instance.example` and `terraform untaint aws_instance.example` |
-| 11 | How do you specify resource timeouts in Terraform? | 
+| 11 | How do you specify resource timeouts in Terraform? | .|
 ```hcl
 resource "aws_instance" "example" {
   ami           = "ami-0c55b159cbfafe1f0"
@@ -365,7 +420,9 @@ resource "aws_instance" "example" {
     delete = "20m"
   }
 }
-``` |
+```
+| No | Question | Answer |
+|----|----------|--------|
 | 12 | How do you create a resource with an inline block? | Use inline blocks within the resource definition. |
 | 13 | How do you use the Terraform resource graph to debug dependencies? | Use `terraform graph` to generate a visual representation of resource dependencies. |
 | 14 | How do you define a custom resource in Terraform? | Implement a custom provider with resource definitions in Go. |
@@ -375,16 +432,19 @@ resource "aws_instance" "example" {
 
 | No | Question | Answer |
 |----|----------|--------|
-| 1  | How do you define a variable in Terraform? | 
+| 1  | How do you define a variable in Terraform? | .|
 ```hcl
 variable "instance_type" {
   description = "Type of instance to create"
   type        = string
   default     = "t2.micro"
 }
-``` |
+```
+
+| No | Question | Answer |
+|----|----------|--------|
 | 2  | How do you reference a variable in a resource block? | `instance_type = var.instance_type` |
-| 3  | How do you define a map variable in Terraform? | 
+| 3  | How do you define a map variable in Terraform? | .|
 ```hcl
 variable "instance_tags" {
   description = "Tags for the instance"
@@ -394,24 +454,23 @@ variable "instance_tags" {
     Env  = "dev"
   }
 }
-``` |
-| 4  | How do you reference a map variable in a resource block? | 
-```hcl
-tags = var.instance_tags
-``` |
-| 5  | How do you define a list variable in Terraform? | 
+```
+| No | Question | Answer |
+|----|----------|--------|
+| 4  | How do you reference a map variable in a resource block? | `tags = var.instance_tags`|
+| 5  | How do you define a list variable in Terraform? | refer below code |
 ```hcl
 variable "availability_zones" {
   description = "List of availability zones"
   type        = list(string)
   default     = ["us-west-2a", "us-west-2b"]
 }
-``` |
-| 6  | How do you reference a list variable in a resource block? | 
-```hcl
-availability_zone = var.availability_zones[0]
-``` |
-| 7  | How do you define a variable with a validation rule? | 
+```
+
+| No | Question | Answer |
+|----|----------|--------|
+| 6  | How do you reference a list variable in a resource block? | `availability_zone = var.availability_zones[0]`|
+| 7  | How do you define a variable with a validation rule? | refer below code |
 ```hcl
 variable "instance_count" {
   description = "Number of instances"
@@ -421,15 +480,20 @@ variable "instance_count" {
     error_message = "The instance count must be greater than 0"
   }
 }
-``` |
-| 8  | How do you define a sensitive variable in Terraform? | 
+```
+| No | Question | Answer |
+|----|----------|--------|
+| 8  | How do you define a sensitive variable in Terraform? | refer below code |
 ```hcl
 variable "db_password" {
   description = "Database password"
   type        = string
   sensitive   = true
 }
-``` |
+```
+
+| No | Question | Answer |
+|----|----------|--------|
 | 9  | How do you override variable values at runtime? | Use `terraform apply -var="instance_type=t2.large"` or `terraform apply -var-file="vars.tfvars"`. |
 | 10 | How do you use the default variable values in Terraform? | Omit the variable assignment to use the default value specified in the variable block. |
 | 11 | How do you load variable values from a file? | Use `terraform apply -var-file="vars.tfvars"`. |
@@ -448,7 +512,7 @@ variable "db_password" {
 | 4  | How do you move a resource in the state file? | `terraform state mv aws_instance.old aws_instance.new` |
 | 5  | How do you import an existing resource into Terraform state? | `terraform import aws_instance.example i-1234567890abcdef0` |
 | 6  | How do you lock the state file to prevent concurrent modifications? | Use a backend that supports state locking, such as S3 with DynamoDB for locking. |
-| 7  | How do you manage remote state in Terraform? | 
+| 7  | How do you manage remote state in Terraform? | refer below code |
 ```hcl
 terraform {
   backend "s3" {
@@ -457,9 +521,11 @@ terraform {
     region = "us-west-2"
   }
 }
-``` |
+```
+| No | Question | Answer |
+|----|----------|--------|
 | 8  | How do you enable state versioning in S3? | Enable versioning on the S3 bucket used for the state backend. |
-| 9  | How do you configure state locking with DynamoDB? | 
+| 9  | How do you configure state locking with DynamoDB? | refer below code |
 ```hcl
 terraform {
   backend "s3" {
@@ -469,18 +535,22 @@ terraform {
     dynamodb_table = "terraform-lock"
   }
 }
-``` |
+```
+| No | Question | Answer |
+|----|----------|--------|
 | 10 | How do you view the history of state changes? | Use `terraform state pull` to retrieve the current state file and check the version history if using a versioned backend. |
 | 11 | How do you resolve state drift in Terraform? | Run `terraform plan` to identify drift and `terraform apply` to reconcile the state. |
 | 12 | How do you split a state file into multiple state files? | Use `terraform state mv` to move resources to a new state file managed by a different backend configuration. |
-| 13 | How do you configure a local state backend? | 
+| 13 | How do you configure a local state backend? | refer below code |
 ```hcl
 terraform {
   backend "local" {
     path = "terraform.tfstate"
   }
 }
-``` |
+```
+| No | Question | Answer |
+|----|----------|--------|
 | 14 | How do you migrate state from one backend to another? | `terraform init -migrate-state` |
 | 15 | How do you enable state encryption at rest in S3? | Use an S3 bucket with default encryption enabled or specify the `server_side_encryption` argument in the backend configuration. |
 
@@ -489,7 +559,7 @@ terraform {
 | No | Question | Answer |
 |----|----------|--------|
 | 1  | How do you define a module in Terraform? | Create a directory with `.tf` files and define resources inside it. |
-| 2  | How do you call a module in a Terraform configuration? | 
+| 2  | How do you call a module in a Terraform configuration? | refer below code |
 ```hcl
 module "network" {
   source = "./modules/network"
@@ -497,29 +567,39 @@ module "network" {
 
  "10.0.0.0/16"
 }
-``` |
+```
+
+| No | Question | Answer |
+|----|----------|--------|
 | 3  | How do you pass variables to a module? | Use the `variable` block in the module and pass values when calling the module. |
-| 4  | How do you define module outputs? | 
+| 4  | How do you define module outputs? | refer below code |
 ```hcl
 output "subnet_id" {
   value = aws_subnet.example.id
 }
-``` |
-| 5  | How do you use a public module from the Terraform Registry? | 
+```
+| No | Question | Answer |
+|----|----------|--------|
+| 5  | How do you use a public module from the Terraform Registry? | refer below code |
 ```hcl
 module "vpc" {
   source  = "terraform-aws-modules/vpc/aws"
   version = "2.70.0"
   cidr    = "10.0.0.0/16"
 }
-``` |
+``` 
+| No | Question | Answer |
+|----|----------|--------|
 | 6  | How do you handle module versioning? | Specify the `version` argument in the module source. |
-| 7  | How do you use a module from a Git repository? | 
+| 7  | How do you use a module from a Git repository? | . |
 ```hcl
 module "vpc" {
   source = "git::https://github.com/terraform-aws-modules/terraform-aws-vpc.git?ref=v2.70.0"
 }
-``` |
+```
+
+| No | Question | Answer |
+|----|----------|--------|
 | 8  | How do you reference outputs from a module? | Use the `module` keyword followed by the module name and output name (e.g., `module.network.subnet_id`). |
 | 9  | How do you manage module dependencies? | Use implicit dependencies by referencing module outputs in other module inputs. |
 | 10 | How do you use local modules in a Terraform configuration? | Use a relative path in the `source` argument (e.g., `source = "./modules/network"`). |
@@ -549,7 +629,7 @@ module "vpc" {
 | No | Question | Answer |
 |----|----------|--------|
 | 1  | What is a data source in Terraform? | A data source allows you to fetch information defined outside of Terraform. |
-| 2  | How do you define a data source in Terraform? | 
+| 2  | How do you define a data source in Terraform? | .|
 ```hcl
 data "aws_ami" "example" {
   most_recent = true
@@ -559,9 +639,11 @@ data "aws_ami" "example" {
   }
   owners = ["amazon"]
 }
-``` |
+```
+| No | Question | Answer |
+|----|----------|--------|
 | 3  | How do you reference a data source in a resource block? | `ami = data.aws_ami.example.id` |
-| 4  | How do you use a data source to get the current region in AWS? | 
+| 4  | How do you use a data source to get the current region in AWS? | .|
 ```hcl
 data "aws_region" "current" {}
 
@@ -572,74 +654,99 @@ resource "aws_instance" "example" {
     Name = data.aws_region.current.name
   }
 }
-``` |
+```
+| No | Question | Answer |
+|----|----------|--------|
 | 5  | How do you fetch information from an external API using a data source? | Use the `http` provider and `http` data source. |
-| 6  | How do you use a data source to get information about a specific AWS instance? | 
+| 6  | How do you use a data source to get information about a specific AWS instance? | .|
 ```hcl
 data "aws_instance" "example" {
   instance_id = "i-1234567890abcdef0"
 }
-``` |
-| 7  | How do you use a data source to get information about an AWS VPC? | 
+```
+| No | Question | Answer |
+|----|----------|--------|
+| 7  | How do you use a data source to get information about an AWS VPC? | .|
 ```hcl
 data "aws_vpc" "example" {
   id = "vpc-12345678"
 }
-``` |
-| 8  | How do you use a data source to get information about an AWS S3 bucket? | 
+```
+| No | Question | Answer |
+|----|----------|--------|
+| 8  | How do you use a data source to get information about an AWS S3 bucket? | .|
 ```hcl
 data "aws_s3_bucket" "example" {
   bucket = "my-bucket"
 }
-``` |
-| 9  | How do you use a data source to get information about an AWS IAM role? | 
+```
+| No | Question | Answer |
+|----|----------|--------|
+| 9  | How do you use a data source to get information about an AWS IAM role? | .|
 ```hcl
 data "aws_iam_role" "example" {
   name = "my-role"
 }
-``` |
-| 10 | How do you use a data source to get information about an AWS security group? | 
+```
+| No | Question | Answer |
+|----|----------|--------|
+| 10 | How do you use a data source to get information about an AWS security group? | .|
 ```hcl
 data "aws_security_group" "example" {
   id = "sg-12345678"
 }
-``` |
-| 11 | How do you use a data source to get information about an AWS RDS instance? | 
+```
+| No | Question | Answer |
+|----|----------|--------|
+| 11 | How do you use a data source to get information about an AWS RDS instance? | .|
 ```hcl
 data "aws_db_instance" "example" {
   db_instance_identifier = "mydb"
 }
-``` |
-| 12 | How do you use a data source to get information about an AWS Lambda function? | 
+```
+| No | Question | Answer |
+|----|----------|--------| 
+| 12 | How do you use a data source to get information about an AWS Lambda function? | .|
 ```hcl
 data "aws_lambda_function" "example" {
   function_name = "my-function"
 }
-``` |
-| 13 | How do you use a data source to get information about an AWS ECS cluster? | 
+```
+| No | Question | Answer |
+|----|----------|--------|
+| 13 | How do you use a data source to get information about an AWS ECS cluster? | .|
 ```hcl
 data "aws_ecs_cluster" "example" {
   cluster_name = "my-cluster"
 }
-``` |
-| 14 | How do you use a data source to get information about an AWS EKS cluster? | 
+```
+| No | Question | Answer |
+|----|----------|--------|
+| 14 | How do you use a data source to get information about an AWS EKS cluster? | .|
 ```hcl
 data "aws_eks_cluster" "example" {
   name = "my-cluster"
 }
-``` |
-| 15 | How do you use a data source to get information about an AWS CloudFront distribution? | 
+```
+| No | Question | Answer |
+|----|----------|--------|
+| 15 | How do you use a data source to get information about an AWS CloudFront distribution? | .|
 ```hcl
 data "aws_cloudfront_distribution" "example" {
   id = "E1A2B3C4D5E6F7"
 }
-``` |
-| 16 | How do you use a data source to get information about an AWS DynamoDB table? | 
+```
+| No | Question | Answer |
+|----|----------|--------|
+| 16 | How do you use a data source to get information about an AWS DynamoDB table? | .|
 ```hcl
 data "aws_dynamodb_table" "example" {
   name = "my-table"
 }
-``` |
+```
+
+| No | Question | Answer |
+|----|----------|--------|
 | 17 | How do you use a data source to get information about an AWS ELB? | 
 ```hcl
 data "aws_elb" "example" {
