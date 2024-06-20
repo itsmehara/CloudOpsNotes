@@ -275,7 +275,10 @@ provider "aws" {
 provider "custom" {
   alias = "example"
 }
-``` 
+```
+
+| No | Question | Answer |
+|----|----------|--------|
 | 8  | How do you pass environment variables to a provider? | Use the `environment` block in the provider configuration. |
 | 9  | How do you use multiple providers in a single configuration? | By defining multiple provider blocks and referencing them with aliases in resource configurations. |
 | 10 | How do you override provider configurations for specific resources? | By specifying the `provider` argument in the resource block. |
