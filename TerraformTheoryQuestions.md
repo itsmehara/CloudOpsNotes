@@ -118,9 +118,7 @@ Let's create a list of 30 questions and answers for each section in a table form
 | 16 | How do you configure Terraform to use GCP as a provider? | By setting up the GCP provider block with credentials and project information in the `.tf` files. |
 | 17 | How do you install third-party Terraform providers? | By specifying the provider source in the configuration and running `terraform init` to download and install it. |
 | 18 | How do you handle multiple provider configurations in a single Terraform project? | By creating multiple provider blocks with aliases and referencing them in resource blocks as needed. |
-| 19 | How do you configure Terraform to use
-
- environment variables for provider credentials? | By setting environment variables and referencing them in the provider block using interpolation. |
+| 19 | How do you configure Terraform to use environment variables for provider credentials? | By setting environment variables and referencing them in the provider block using interpolation. |
 | 20 | How do you install Terraform on a CI/CD server? | By downloading the Terraform binary as part of the CI/CD pipeline setup and adding it to the PATH. |
 | 21 | How do you ensure Terraform is installed correctly on a new machine? | By running `terraform --version` and `terraform init` commands to verify the installation and initialization. |
 | 22 | How do you configure Terraform to use a specific provider version? | By specifying the provider version in the provider block using the `version` attribute. |
@@ -182,9 +180,7 @@ Let's create a list of 30 questions and answers for each section in a table form
 | 8  | How do you create custom providers in Terraform? | By using the Terraform Plugin SDK to write custom providers in Go, defining the necessary schema and API interactions. |
 | 9  | What are some common built-in providers in Terraform? | Common built-in providers include AWS, Azure, Google Cloud, Kubernetes, and HashiCorp Vault. |
 | 10 | How do you use the `terraform provider` command? | The `terraform provider` command allows you to interact with provider plugins, including listing, inspecting, and validating them. |
-| 11 | How do you override provider configuration in Terraform? | By using environment variables or specifying different configurations in
-
- separate `provider` blocks. |
+| 11 | How do you override provider configuration in Terraform? | By using environment variables or specifying different configurations in separate `provider` blocks. |
 | 12 | How do you handle provider authentication in Terraform? | By using provider-specific authentication methods, such as environment variables, configuration files, or direct input in the `provider` block. |
 | 13  | How do you use multiple providers within a module? | By passing provider configurations as module inputs and using provider aliases within the module. |
 | 14 | How do you configure Terraform to use an on-premises provider? | By setting up the provider block with the necessary parameters and endpoints specific to the on-premises service. |
@@ -247,9 +243,7 @@ Let's create a list of 30 questions and answers for each section in a table form
 | 1  | What is a Terraform variable? | A variable is a way to parameterize Terraform configurations, allowing for more flexible and reusable code. |
 | 2  | How do you define a variable in Terraform? | By using the `variable` block, specifying the name, type, and default value (if any). |
 | 3  | How do you reference a variable in a Terraform configuration? | By using interpolation syntax `${var.variable_name}` within resource or module blocks. |
-| 4  | What is the purpose of the `terraform.tfvars
-
-` file? | The `terraform.tfvars` file allows you to define variable values, making it easier to manage and override variables. |
+| 4  | What is the purpose of the `terraform.tfvars` file? | The `terraform.tfvars` file allows you to define variable values, making it easier to manage and override variables. |
 | 5  | How do you define a variable with a default value in Terraform? | By specifying the `default` attribute in the `variable` block. |
 | 6  | How do you define a required variable in Terraform? | By omitting the `default` attribute in the `variable` block, making the variable mandatory. |
 | 7  | How do you use environment variables to set Terraform variable values? | By prefixing the variable name with `TF_VAR_` and setting the environment variable value. |
@@ -359,7 +353,7 @@ Absolutely, let's continue from where we left off.
 | 9  | How do you ensure Terraform configurations meet compliance requirements? | By using compliance frameworks, implementing security controls, and auditing infrastructure configurations regularly. |
 | 10 | What are some best practices for managing Terraform workspaces? | Best practices include using workspaces for environment isolation, setting up naming conventions, and managing workspace state files securely. |
 
-Sure, let's continue from where we left off and ensure that each section has 30 questions and answers, following the correct order.
+let's continue from where we left off and ensure that each section has 30 questions and answers, following the correct order.
 
 ### Section 7: Modules (continued)
 
@@ -424,9 +418,7 @@ Sure, let's continue from where we left off and ensure that each section has 30 
 | 12 | Can provisioners be used with any resource type in Terraform? | Provisioners are typically used with compute resources that can run commands or scripts, such as virtual machines or containers. |
 | 13 | How do you handle sensitive information in provisioners? | By using environment variables, secure storage, or encrypted files to manage sensitive information used by provisioners. |
 | 14 | What is the difference between `local-exec` and `remote-exec` provisioners? | `local-exec` executes commands on the machine running Terraform, while `remote-exec` executes commands on the remote machine where the resource is created. |
-| 15 | How do you chain multiple
-
- provisioners together in Terraform? | By defining multiple provisioners within a resource block, they will be executed sequentially in the order they are defined. |
+| 15 | How do you chain multiple provisioners together in Terraform? | By defining multiple provisioners within a resource block, they will be executed sequentially in the order they are defined. |
 | 16 | How do you handle dependencies between provisioners in Terraform? | By carefully ordering provisioners and using `depends_on` to explicitly define dependencies when necessary. |
 | 17 | How do you use the `null_resource` with provisioners in Terraform? | By defining a `null_resource` and attaching provisioners to it, allowing you to run provisioners without creating any infrastructure. |
 | 18 | How do you pass dynamic data to provisioners in Terraform? | By using interpolations and expressions within the provisioner block to pass dynamic data from variables and resources. |
@@ -486,9 +478,7 @@ Sure, let's continue from where we left off and ensure that each section has 30 
 | 2  | What is Terraform Enterprise? | Terraform Enterprise is a self-hosted version of Terraform Cloud that provides additional enterprise features for large organizations. |
 | 3  | How do you set up a Terraform Cloud workspace? | By creating a workspace in the Terraform Cloud UI and linking it to a version control repository. |
 | 4  | What are some key features of Terraform Cloud? | Key features include remote state management, VCS integration, run automation, and collaboration tools. |
-| 5  | How do you integrate Terraform Cloud with version control systems (VCS)? | By linking
-
- Terraform Cloud workspaces to repositories on GitHub, GitLab, Bitbucket, or Azure DevOps. |
+| 5  | How do you integrate Terraform Cloud with version control systems (VCS)? | By linking Terraform Cloud workspaces to repositories on GitHub, GitLab, Bitbucket, or Azure DevOps. |
 | 6  | What is a run in Terraform Cloud? | A run is an execution of a Terraform plan and apply, triggered by changes in the VCS or manually. |
 | 7  | How do you manage secrets in Terraform Cloud? | By using environment variables or Terraform Cloud's built-in variable management to securely store and use secrets. |
 | 8  | How do you use workspaces in Terraform Cloud? | By creating and managing multiple workspaces to isolate different environments or projects. |
@@ -620,9 +610,7 @@ Sure, let's continue from where we left off and ensure that each section has 30 
 | No | Question | Answer |
 |----|----------|--------|
 | 1  | What is Terraform? | Terraform is an open-source infrastructure as code (IaC) tool that allows you to define, provision, and manage infrastructure using a declarative configuration language. |
-| 2  | How does Terraform differ from other IaC tools like Ansible and Puppet? | Terraform focuses on infrastructure provisioning and management, using a declarative approach, while
-
- Ansible and Puppet are more focused on configuration management and use an imperative approach. |
+| 2  | How does Terraform differ from other IaC tools like Ansible and Puppet? | Terraform focuses on infrastructure provisioning and management, using a declarative approach, while Ansible and Puppet are more focused on configuration management and use an imperative approach. |
 | 3  | What is a Terraform module? | A Terraform module is a reusable, self-contained configuration that encapsulates a set of related resources and outputs. |
 | 4  | How do you create a Terraform module? | By organizing related resources and variables into a directory, and defining input variables, outputs, and resource configurations in separate files. |
 | 5  | How do you use a Terraform module in your configuration? | By using the `module` block to reference the module's source, passing input variables, and utilizing its outputs. |
