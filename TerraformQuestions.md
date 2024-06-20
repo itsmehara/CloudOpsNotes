@@ -313,7 +313,9 @@ provider "aws" {
 provider "azurerm" {
   features {}
 }
-``` 
+```
+| No | Question | Answer |
+|----|----------|--------|
 | 15 | How do you configure the Google Cloud provider in Terraform? | refer below code |
 ```hcl
 provider "google" {
@@ -699,30 +701,37 @@ data "aws_security_group" "example" {
   id = "sg-12345678"
 }
 ```
+
 | No | Question | Answer |
 |----|----------|--------|
 | 11 | How do you use a data source to get information about an AWS RDS instance? | .|
+
 ```hcl
 data "aws_db_instance" "example" {
   db_instance_identifier = "mydb"
 }
 ```
+
 | No | Question | Answer |
 |----|----------|--------| 
 | 12 | How do you use a data source to get information about an AWS Lambda function? | .|
+
 ```hcl
 data "aws_lambda_function" "example" {
   function_name = "my-function"
 }
 ```
+
 | No | Question | Answer |
 |----|----------|--------|
 | 13 | How do you use a data source to get information about an AWS ECS cluster? | .|
+
 ```hcl
 data "aws_ecs_cluster" "example" {
   cluster_name = "my-cluster"
 }
 ```
+
 | No | Question | Answer |
 |----|----------|--------|
 | 14 | How do you use a data source to get information about an AWS EKS cluster? | .|
@@ -731,6 +740,7 @@ data "aws_eks_cluster" "example" {
   name = "my-cluster"
 }
 ```
+
 | No | Question | Answer |
 |----|----------|--------|
 | 15 | How do you use a data source to get information about an AWS CloudFront distribution? | .|
@@ -739,6 +749,7 @@ data "aws_cloudfront_distribution" "example" {
   id = "E1A2B3C4D5E6F7"
 }
 ```
+
 | No | Question | Answer |
 |----|----------|--------|
 | 16 | How do you use a data source to get information about an AWS DynamoDB table? | .|
@@ -750,39 +761,54 @@ data "aws_dynamodb_table" "example" {
 
 | No | Question | Answer |
 |----|----------|--------|
-| 17 | How do you use a data source to get information about an AWS ELB? | 
+| 17 | How do you use a data source to get information about an AWS ELB? | .|
 ```hcl
 data "aws_elb" "example" {
   name = "my-elb"
 }
-``` |
+```
+
+| No | Question | Answer |
+|----|----------|--------|
 | 18 | How do you use a data source to get information about an AWS CloudWatch log group? | 
 ```hcl
 data "aws_cloudwatch_log_group" "example" {
   name = "my-log-group"
 }
-``` |
-| 19 | How do you use a data source to get information about an AWS KMS key? | 
+```
+
+| No | Question | Answer |
+|----|----------|--------|
+| 19 | How do you use a data source to get information about an AWS KMS key? | .|
 ```hcl
 data "aws_kms_key" "example" {
   key_id = "1234abcd-12ab-34cd-56ef-1234567890ab"
 }
-``` |
+```
+
+| No | Question | Answer |
+|----|----------|--------|
 | 20 | How do you use a data source to get information about an AWS NAT gateway? | 
 ```hcl
 data "aws_nat_gateway" "example" {
   id = "nat-12345678"
 }
-``` |
-| 21 | How do you use a data source to get information about an AWS Redshift cluster? | 
+```
+
+| No | Question | Answer |
+|----|----------|--------|
+| 21 | How do you use a data source to get information about an AWS Redshift cluster? | .|
 
 
 ```hcl
 data "aws_redshift_cluster" "example" {
   cluster_identifier = "my-cluster"
 }
-``` |
-| 22 | How do you use a data source to get information about an AWS route table? | 
+```
+
+| No | Question | Answer |
+|----|----------|--------|
+| 22 | How do you use a data source to get information about an AWS route table? | .|
 ```hcl
 data "aws_route_table" "example" {
   id = "rtb-12345678"
@@ -904,15 +930,19 @@ provisioner "local-exec" {
 | No | Question | Answer |
 |----|----------|--------|
 | 1  | What is a backend in Terraform? | A backend defines where Terraform's state file is stored. |
-| 2  | How do you configure a local backend? | 
+| 2  | How do you configure a local backend? | .|
+
 ```hcl
 terraform {
   backend "local" {
     path = "terraform.tfstate"
   }
 }
-``` |
-| 3  | How do you configure a remote backend? | 
+```
+
+| No | Question | Answer |
+|----|----------|--------|
+| 3  | How do you configure a remote backend? | .|
 ```hcl
 terraform {
   backend "remote" {
@@ -923,8 +953,11 @@ terraform {
     }
   }
 }
-``` |
-| 4  | How do you configure an S3 backend? | 
+```
+
+| No | Question | Answer |
+|----|----------|--------|
+| 4  | How do you configure an S3 backend? | .|
 ```hcl
 terraform {
   backend "s3" {
@@ -933,8 +966,11 @@ terraform {
     region = "us-west-2"
   }
 }
-``` |
-| 5  | How do you configure a GCS backend? | 
+```
+
+| No | Question | Answer |
+|----|----------|--------|
+| 5  | How do you configure a GCS backend? | .|
 ```hcl
 terraform {
   backend "gcs" {
@@ -942,8 +978,10 @@ terraform {
     prefix  = "terraform/state"
   }
 }
-``` |
-| 6  | How do you configure an Azure backend? | 
+```
+| No | Question | Answer |
+|----|----------|--------|
+| 6  | How do you configure an Azure backend? | .|
 ```hcl
 terraform {
   backend "azurerm" {
@@ -952,8 +990,11 @@ terraform {
     key                  = "terraform.tfstate"
   }
 }
-``` |
-| 7  | How do you configure a Consul backend? | 
+```
+
+| No | Question | Answer |
+|----|----------|--------|
+| 7  | How do you configure a Consul backend? | .|
 ```hcl
 terraform {
   backend "consul" {
@@ -961,8 +1002,10 @@ terraform {
     path    = "terraform/state"
   }
 }
-``` |
-| 8  | How do you configure an etcd backend? | 
+```
+| No | Question | Answer |
+|----|----------|--------|
+| 8  | How do you configure an etcd backend? | .|
 ```hcl
 terraform {
   backend "etcd" {
@@ -970,16 +1013,20 @@ terraform {
     key       = "/terraform/state"
   }
 }
-``` |
-| 9  | How do you configure a PostgreSQL backend? | 
+```
+| No | Question | Answer |
+|----|----------|--------|
+| 9  | How do you configure a PostgreSQL backend? | .|
 ```hcl
 terraform {
   backend "pg" {
     conn_str = "user=username password=password host=hostname port=5432 dbname=database sslmode=disable"
   }
 }
-``` |
-| 10 | How do you configure a MySQL backend? | 
+```
+| No | Question | Answer |
+|----|----------|--------|
+| 10 | How do you configure a MySQL backend? | .|
 ```hcl
 terraform {
   backend "mysql" {
@@ -990,6 +1037,8 @@ terraform {
     table    = "terraform_state"
   }
 }
-``` |
-| 11 | How do you configure an HTTP backend? | 
+```
+| No | Question | Answer |
+|----|----------|--------|
+| 11 | How do you configure an HTTP backend? | .|
 
