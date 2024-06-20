@@ -78,6 +78,7 @@ variable "instance_type" {
 | No | Question | Answer |
 |----|----------|--------|
 | 6  | How do you reference a variable in a Terraform resource block? | refer below code|
+
 ```hcl
 resource "aws_instance" "example" {
   ami           = "ami-0c55b159cbfafe1f0"
@@ -85,8 +86,10 @@ resource "aws_instance" "example" {
 }
 ```
 
+| No | Question | Answer |
 |----|----------|--------|
 | 7  | How do you define output values in Terraform? | refer below code |
+
 ```hcl
 output "instance_id" {
   value = aws_instance.example.id
@@ -95,7 +98,8 @@ output "instance_id" {
  
 | 8  | How do you format Terraform configuration files? | `terraform fmt` |
 | 9  | How do you validate a Terraform configuration file? | `terraform validate` |
-| 10 | Write a data source block to fetch the latest Amazon Linux 2 AMI. | 
+| 10 | Write a data source block to fetch the latest Amazon Linux 2 AMI. | refer below code. |
+
 ```hcl
 data "aws_ami" "latest_amazon_linux" {
   most_recent = true
@@ -107,7 +111,8 @@ data "aws_ami" "latest_amazon_linux" {
 
   owners = ["amazon"]
 }
-``` |
+``` 
+
 | 11 | How do you use a Terraform module in a configuration? | 
 ```hcl
 module "network" {
