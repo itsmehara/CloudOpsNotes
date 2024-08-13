@@ -43,6 +43,8 @@ notes
 
 <br>
 
+## **Python / Pyspark Interview Preperation**
+
 Below questions for each section focusing on Pandas, NumPy, list/collection slicing, data transformations, queries on Pandas, joins in Pandas, and matplotlib/other similar libraries.
 
 ### Pandas Knowledge
