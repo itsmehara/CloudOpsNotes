@@ -1072,6 +1072,8 @@ terraform {
   }
 }
 ``` 
+| No | Question | Answer |
+|----|----------|--------|
 | 12 | How do you configure a Swift backend? | .|
 ```hcl
 terraform {
@@ -1080,7 +1082,9 @@ terraform {
     path      = "terraform/state"
   }
 }
-``` 
+```
+| No | Question | Answer |
+|----|----------|--------|
 | 13 | How do you configure an Artifactory backend? | .|
 ```hcl
 terraform {
@@ -1093,6 +1097,8 @@ terraform {
   }
 }
 ``` 
+| No | Question | Answer |
+|----|----------|--------|
 | 14 | How do you configure a Terraform Cloud backend? | .|
 ```hcl
 terraform {
@@ -1105,6 +1111,8 @@ terraform {
   }
 }
 ``` 
+| No | Question | Answer |
+|----|----------|--------|
 | 15 | How do you configure a Terraform Enterprise backend? | .|
 ```hcl
 terraform {
