@@ -1063,4 +1063,59 @@ terraform {
 | No | Question | Answer |
 |----|----------|--------|
 | 11 | How do you configure an HTTP backend? | .|
+```hcl
+terraform {
+  backend "http" {
+    address = "http://terraform-server"
+    lock_address = "http://lock-server"
+    unlock_address = "http://unlock-server"
+  }
+}
+``` 
+| 12 | How do you configure a Swift backend? | .|
+```hcl
+terraform {
+  backend "swift" {
+    container = "my-container"
+    path      = "terraform/state"
+  }
+}
+``` 
+| 13 | How do you configure an Artifactory backend? | .|
+```hcl
+terraform {
+  backend "artifactory" {
+    url       = "https://artifactory.example.com"
+    repo      = "terraform-state"
+    subfolder = "terraform"
+    username  = "username"
+    password  = "password"
+  }
+}
+``` 
+| 14 | How do you configure a Terraform Cloud backend? | .|
+```hcl
+terraform {
+  backend "remote" {
+    hostname     = "app.terraform.io"
+    organization = "my-org"
+    workspaces {
+      name = "my-workspace"
+    }
+  }
+}
+``` 
+| 15 | How do you configure a Terraform Enterprise backend? | .|
+```hcl
+terraform {
+  backend "remote" {
+    hostname     = "my-tfe-server"
+    organization = "my-org"
+    workspaces {
+      name = "my-workspace"
+    }
+  }
+}
+``` 
 
+These are some sample questions and answers organized in a table format for different topics related to Terraform. You can customize the questions and answers based on your specific needs or add more topics as required.
