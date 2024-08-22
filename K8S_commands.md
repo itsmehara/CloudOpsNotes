@@ -73,3 +73,60 @@ These commands provide more detailed diagnostics and troubleshooting:
 | `kubectl get pod <pod-name> -o custom-columns=NAME:.metadata.name,STATUS:.status.phase,RESTARTS:.status.containerStatuses[0].restartCount` | Get custom columns for a specific pod’s status and restart count |
 
 These commands should help you with both initial diagnostics and deeper troubleshooting when working with Kubernetes pods and other resources.
+
+
+
+
+If you are working with AWS EKS (Elastic Kubernetes Service), many `kubectl` commands remain the same, but there are a few additional AWS-specific commands and considerations to be aware of. Below is a list of commonly used commands for managing and troubleshooting an EKS cluster, divided into "First Aid" and "Second Level Treatment."
+
+### First Aid Commands
+
+These commands help with basic checks and quick insights:
+
+| **Command**                                          | **Description**                                              |
+|------------------------------------------------------|--------------------------------------------------------------|
+| `kubectl get ns`                                    | List all namespaces                                         |
+| `kubectl get pods`                                 | List all pods in the current namespace                      |
+| `kubectl get pods -n <namespace>`                   | List all pods in a specific namespace                       |
+| `kubectl get pods -o wide`                          | List all pods with additional details (like node they are on) |
+| `kubectl get svc`                                   | List all services in the current namespace                  |
+| `kubectl get svc -n <namespace>`                     | List all services in a specific namespace                   |
+| `kubectl describe pod <pod-name>`                    | Show detailed information about a specific pod             |
+| `kubectl logs <pod-name>`                            | Show logs for a specific pod                                |
+| `kubectl logs -f <pod-name>`                         | Follow logs for a specific pod                              |
+| `kubectl describe pod <pod-name> -n <namespace>`     | Show detailed information about a specific pod in a namespace |
+| `kubectl exec -it <pod-name> -- /bin/bash`          | Start a bash session in a running pod                       |
+| `kubectl get events`                               | List recent events in the cluster                           |
+| `kubectl top pods`                                 | Show CPU and memory usage for pods                          |
+| `aws eks update-kubeconfig --name <cluster-name>`   | Update kubeconfig for the EKS cluster                       |
+| `aws eks list-clusters`                             | List all EKS clusters                                      |
+
+### Second Level Treatment Commands
+
+These commands provide more detailed diagnostics and troubleshooting:
+
+| **Command**                                          | **Description**                                              |
+|------------------------------------------------------|--------------------------------------------------------------|
+| `kubectl describe pod <pod-name>`                    | Detailed information about a specific pod, including events and resource usage |
+| `kubectl describe pod <pod-name> -n <namespace>`     | Detailed information about a pod in a specific namespace    |
+| `kubectl get pod <pod-name> -o yaml`                 | View the YAML configuration of a specific pod               |
+| `kubectl get pod <pod-name> -o json`                 | View the JSON configuration of a specific pod               |
+| `kubectl logs <pod-name> -c <container-name>`        | View logs from a specific container within a pod            |
+| `kubectl logs <pod-name> --previous`                 | View logs from the previous instance of a container (if it has crashed) |
+| `kubectl describe service <service-name>`            | Detailed information about a specific service               |
+| `kubectl describe node <node-name>`                  | Detailed information about a specific node                  |
+| `kubectl top nodes`                                  | Show CPU and memory usage for nodes                         |
+| `kubectl get events --sort-by=.metadata.creationTimestamp` | List events sorted by creation timestamp for better insight |
+| `kubectl debug pod <pod-name> --image=<debug-image>` | Create a debugging container in the pod using a specified image |
+| `aws eks describe-cluster --name <cluster-name>`    | Get details about a specific EKS cluster                    |
+| `aws eks list-nodegroups --cluster-name <cluster-name>` | List all node groups in a specific EKS cluster               |
+| `aws eks get-token --cluster-name <cluster-name>`    | Get a token to authenticate to the EKS cluster                |
+
+
+| **Command**                                          | **Description**                                              |
+|------------------------------------------------------|--------------------------------------------------------------|
+| `kubectl get pod <pod-name> -o custom-columns=NAME:.metadata.name,STATUS:.status.phase,RESTARTS:.status.containerStatuses[0].restartCount` | Get custom columns for a specific pod’s status and restart count |
+| `aws eks describe-nodegroup --cluster-name <cluster-name> --nodegroup-name <nodegroup-name>` | Describe a specific node group in an EKS cluster |
+
+
+These commands cover basic and advanced operations you might need to perform when managing and troubleshooting an AWS EKS cluster.
