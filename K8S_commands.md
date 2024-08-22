@@ -184,3 +184,65 @@ When working with AWS EKS, it's common to have LoadBalancers associated with you
    - Example CLI command: `aws eks update-kubeconfig --name <cluster-name>`
 
 By using these commands and tips, you should be able to manage and troubleshoot LoadBalancers associated with your EKS cluster effectively.
+
+To switch namespaces in Kubernetes, you have a couple of options depending on whether you want to change the namespace for a single command or for all subsequent commands.
+
+### Option 1: Switch Namespace for a Single Command
+
+You can specify the namespace directly in the `kubectl` command using the `-n` or `--namespace` flag. For example:
+
+- **List pods in a specific namespace:**
+  ```bash
+  kubectl get pods -n <namespace>
+  ```
+
+- **Describe a specific pod in a specific namespace:**
+  ```bash
+  kubectl describe pod <pod-name> -n <namespace>
+  ```
+
+### Option 2: Change the Default Namespace for the Current Context
+
+If you want to switch to a different namespace for all subsequent `kubectl` commands in your current context, you can update your `kubectl` configuration to set a new default namespace. This avoids the need to specify the namespace in each command.
+
+- **Set a default namespace for the current context:**
+  ```bash
+  kubectl config set-context --current --namespace=<namespace>
+  ```
+
+  This command updates the context in your kubeconfig file to use the specified namespace by default.
+
+- **Verify the current context and namespace:**
+  ```bash
+  kubectl config view --minify | grep namespace:
+  ```
+
+### Example Workflow
+
+1. **Check Current Namespace:**
+   ```bash
+   kubectl config view --minify | grep namespace:
+   ```
+
+2. **Switch Namespace for All Commands:**
+   ```bash
+   kubectl config set-context --current --namespace=my-new-namespace
+   ```
+
+3. **Verify Namespace Change:**
+   ```bash
+   kubectl config view --minify | grep namespace:
+   ```
+
+4. **Run Commands in New Namespace:**
+   ```bash
+   kubectl get pods
+   kubectl get services
+   ```
+
+5. **Switch Back to Original Namespace (if needed):**
+   ```bash
+   kubectl config set-context --current --namespace=default
+   ```
+
+These methods allow you to either focus on a specific namespace temporarily or permanently change the default namespace for your kubectl commands.
