@@ -65,8 +65,11 @@ These commands provide more detailed diagnostics and troubleshooting:
 | `kubectl describe service <service-name>`            | Detailed information about a specific service               |
 | `kubectl describe node <node-name>`                  | Detailed information about a specific node                  |
 | `kubectl top nodes`                                 | Show CPU and memory usage for nodes                         |
-| `kubectl get pod <pod-name> -o custom-columns=NAME:.metadata.name,STATUS:.status.phase,RESTARTS:.status.containerStatuses[0].restartCount` | Get custom columns for a specific pod’s status and restart count |
 | `kubectl get events --sort-by=.metadata.creationTimestamp` | List events sorted by creation timestamp for better insight |
 | `kubectl debug pod <pod-name> --image=<debug-image>` | Create a debugging container in the pod using a specified image |
+
+| **Command**                                          | **Description**                                              |
+|------------------------------------------------------|--------------------------------------------------------------|
+| `kubectl get pod <pod-name> -o custom-columns=NAME:.metadata.name,STATUS:.status.phase,RESTARTS:.status.containerStatuses[0].restartCount` | Get custom columns for a specific pod’s status and restart count |
 
 These commands should help you with both initial diagnostics and deeper troubleshooting when working with Kubernetes pods and other resources.
