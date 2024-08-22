@@ -246,3 +246,44 @@ If you want to switch to a different namespace for all subsequent `kubectl` comm
    ```
 
 These methods allow you to either focus on a specific namespace temporarily or permanently change the default namespace for your kubectl commands.
+
+
+
+Below is a list of useful AWS CLI commands for debugging AWS EKS clusters, 
+categorized into "First Level" and "Second Level" steps for troubleshooting.
+
+### First Level Debugging Commands
+
+These commands help with basic checks and initial diagnostics:
+
+| **Command**                                          | **Description**                                                |
+|------------------------------------------------------|----------------------------------------------------------------|
+| `aws eks list-clusters`                             | List all EKS clusters in the account                          |
+| `aws eks describe-cluster --name <cluster-name>`    | Get details about a specific EKS cluster                      |
+| `aws eks update-kubeconfig --name <cluster-name>`   | Update kubeconfig file to use the specified EKS cluster        |
+| `aws eks list-nodegroups --cluster-name <cluster-name>` | List all node groups in a specific EKS cluster                 |
+| `aws eks describe-nodegroup --cluster-name <cluster-name> --nodegroup-name <nodegroup-name>` | Get details about a specific node group in an EKS cluster      |
+| `aws elbv2 describe-load-balancers`                  | List all Application and Network LoadBalancers (ALB/NLB)       |
+| `aws elbv2 describe-target-groups`                   | List all target groups associated with ALBs and NLBs           |
+| `aws elbv2 describe-target-health --target-group-arn <target-group-arn>` | Get health status of targets in a specific target group       |
+| `aws cloudwatch describe-alarms`                     | List CloudWatch alarms that might be set up for the cluster    |
+| `aws ec2 describe-instances`                        | List EC2 instances and their statuses (useful for node debugging) |
+
+### Second Level Debugging Commands
+
+These commands provide deeper insights and more detailed troubleshooting:
+
+| **Command**                                          | **Description**                                                |
+|------------------------------------------------------|----------------------------------------------------------------|
+| `aws eks describe-cluster --name <cluster-name>`    | Detailed information about a cluster's configuration, including VPC, subnets, and security groups |
+| `aws eks describe-nodegroup --cluster-name <cluster-name> --nodegroup-name <nodegroup-name>` | Detailed information about a node group, including scaling activities and health checks |
+| `aws eks list-fargate-profiles --cluster-name <cluster-name>` | List Fargate profiles for the specified EKS cluster            |
+| `aws eks describe-fargate-profile --cluster-name <cluster-name> --fargate-profile-name <profile-name>` | Get details about a specific Fargate profile                   |
+| `aws elbv2 describe-load-balancers --load-balancer-arns <arn>` | Detailed information about a specific LoadBalancer             |
+| `aws elbv2 describe-listeners --load-balancer-arn <arn>` | List listeners associated with a specific LoadBalancer          |
+| `aws elbv2 describe-rules --listener-arn <arn>`       | Detailed information about rules for a specific LoadBalancer listener |
+| `aws cloudwatch get-metric-data --metric-name <metric-name> --namespace <namespace>` | Retrieve specific metric data from CloudWatch                   |
+| `aws ec2 describe-instance-status --instance-ids <instance-ids>` | Detailed status of EC2 instances, including system and instance status checks |
+| `aws ec2 describe-security-groups --group-ids <security-group-ids>` | Detailed information about security groups associated with the EKS cluster |
+
+These commands should help you with both initial diagnostics and more in-depth troubleshooting of AWS EKS clusters and related AWS resources.
