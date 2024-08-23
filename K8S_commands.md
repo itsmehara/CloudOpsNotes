@@ -18,7 +18,7 @@ Here's a table of frequently used `kubectl` commands in Kubernetes:
 | `kubectl scale deployment <deploy-name> --replicas=<num>` | Scale the number of replicas in a deployment   |
 | `kubectl rollout status deployment/<deploy-name>` | Check the status of a deployment rollout               |
 | `kubectl rollout history deployment/<deploy-name>` | View the rollout history of a deployment              |
-| `kubectl port-forward <pod-name> <local-port>:<remote-port>`| Forward a port from the local machine to a pod |
+| `kubectl port-forward <pod-name> <local-port>:<remote-port>`| Forward a port from the local machine to a pod|
 | `kubectl config get-contexts`            | List all contexts in the kubeconfig file                       |
 | `kubectl config use-context <context-name>` | Set the current context to a specified context               |
 | `kubectl apply -k <directory>`           | Apply a Kubernetes manifest using Kustomize from a directory   |
@@ -88,7 +88,7 @@ These commands help with basic checks and quick insights:
 | `kubectl get ns`                                    | List all namespaces                                         |
 | `kubectl get pods`                                 | List all pods in the current namespace                      |
 | `kubectl get pods -n <namespace>`                   | List all pods in a specific namespace                       |
-| `kubectl get pods -o wide`                          | List all pods with additional details (like node they are on) |
+| `kubectl get pods -o wide`                          | List all pods with additional details (like node they are on)|
 | `kubectl get svc`                                   | List all services in the current namespace                  |
 | `kubectl get svc -n <namespace>`                     | List all services in a specific namespace                   |
 | `kubectl describe pod <pod-name>`                    | Show detailed information about a specific pod             |
@@ -144,11 +144,11 @@ When working with AWS EKS, it's common to have LoadBalancers associated with you
 |-------------------------------------------------------|----------------------------------------------------------------|
 | `aws elb describe-load-balancers`                     | List all Classic LoadBalancers (ELB)                           |
 | `aws elb describe-load-balancers --load-balancer-names <name>` | Get details for a specific Classic LoadBalancer (ELB)          |
-| `aws elbv2 describe-load-balancers`                   | List all Application LoadBalancers (ALB) and Network LoadBalancers (NLB) |
+| `aws elbv2 describe-load-balancers`                   | List all Application LoadBalancers (ALB) and Network LoadBalancers (NLB)|
 | `aws elbv2 describe-load-balancers --load-balancer-arns <arn>` | Get details for a specific Application or Network LoadBalancer |
 | `aws elbv2 describe-target-groups`                    | List all target groups                                       |
-| `aws elbv2 describe-target-groups --target-group-arns <arn>` | Get details for a specific target group                      |
-| `aws elbv2 describe-listeners --load-balancer-arn <arn>` | List all listeners for a specific LoadBalancer               |
+| `aws elbv2 describe-target-groups --target-group-arns <arn>` | Get details for a specific target group               |
+| `aws elbv2 describe-listeners --load-balancer-arn <arn>` | List all listeners for a specific LoadBalancer            |
 | `aws elbv2 describe-listeners --listener-arn <arn>`   | Get details for a specific listener                          |
 | `aws elbv2 describe-rules --listener-arn <arn>`       | List all rules for a specific listener                       |
 | `aws elbv2 describe-rules --rule-arn <arn>`           | Get details for a specific rule                              |
@@ -157,7 +157,7 @@ When working with AWS EKS, it's common to have LoadBalancers associated with you
 
 | **Command**                                             | **Description**                                              |
 |---------------------------------------------------------|--------------------------------------------------------------|
-| `kubectl get svc`                                     | List all services and their associated LoadBalancers        |
+| `kubectl get svc`                                     | List all services and their associated LoadBalancers         |
 | `kubectl get svc -n <namespace>`                       | List all services in a specific namespace                   |
 | `kubectl describe svc <service-name>`                  | Show detailed information about a specific service, including LoadBalancer details |
 | `kubectl describe svc <service-name> -n <namespace>`   | Show detailed information about a service in a specific namespace |
