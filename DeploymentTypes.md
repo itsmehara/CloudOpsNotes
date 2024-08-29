@@ -82,7 +82,7 @@ Choosing the right deployment method is critical to ensure smooth, reliable, and
 
 Explanations of **Canary** and **Rolling** deployments:
 
-### **Canary Deployment**
+### 9. **Canary Deployment**
 | **Aspect**                   | **Description**                                                                 |
 |------------------------------|---------------------------------------------------------------------------------|
 | **Definition**               | A deployment strategy where a new version of the application is released to a small subset of users or servers first (the "canary"). If this deployment is successful, the new version is gradually rolled out to the rest of the users or servers. |
@@ -100,7 +100,7 @@ Explanations of **Canary** and **Rolling** deployments:
 | **Gradual Rollout**          | Traffic is increased incrementally based on predefined success criteria. For example, starting with 10% of traffic, then 25%, 50%, and so on, until 100% of traffic is on the new version. |
 | **Downtime**                 | Minimal, as only a small percentage of users might experience issues, and quick rollback capabilities ensure minimal disruption. |
 
-### **Rolling Deployment**
+### 10. **Rolling Deployment**
 | **Aspect**                   | **Description**                                                                 |
 |------------------------------|---------------------------------------------------------------------------------|
 | **Definition**               | A deployment strategy where the new version of the application gradually replaces the old version across all instances or servers. Each instance is updated one at a time (or in small batches), ensuring that the application remains available during the deployment. |
